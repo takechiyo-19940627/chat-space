@@ -1,6 +1,6 @@
-##DB設計
+###DB設計
 
-##usersテーブル
+###usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -11,7 +11,7 @@
 - has_many :groups, through: :group_members
 - has_many :messages
 
-##groupsテーブル
+###groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -21,7 +21,7 @@
 - has_many :users, through: :group_members
 - has_many :messages
 
-##group_membersテーブル
+###group_membersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -31,7 +31,7 @@
 - belongs_to :user
 - belongs_to :group
 
-##messagesテーブル
+###messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
