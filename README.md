@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, add_index :users, :name, unique: true|
 |email|text|null: false, add_index :users, :email, unique: true|
 |password|text|null: false|
 
