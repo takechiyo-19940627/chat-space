@@ -1,0 +1,13 @@
+.flash-box
+.wrapper
+	.chat-side
+		.side-header
+			.side-header_box
+				%p.side-header_box_user-name user_name
+			%ul.side-header_box_menu
+				%li.side-header_box_menu_edit-user
+					%a{ :href => '/groups/new' }
+						%i .fa.fa-edit
+				%li.side-header_box_menu_new-group
+					%a{ :href => 'users/user.id/edit'}
+						%i .fa.fa-cog
