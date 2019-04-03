@@ -19,12 +19,28 @@
 			%a{ :href => '/groups/150/messages'}
 			%a{ :href => '/groups/195/messages'}
 			%a{ :href => '/groups/196/messages'}
-
 	.chat-main
 		.main-header
 			.main-header_left-box
+				%h2.main-header_left-box_current-group
+					ddddddddddddddd
+				%ul.main-header_left-box_member-list
+					member:
+					%li.main-header_left-box_member-list_member take
 			%a{ :href => '/groups/94/edit'}
-
+				.main-header_edit-btn Edit
 		.messages
-
-		.form
+			.message
+				.message_upper-info
+					%p.message_upper-info_talker take
+					%p.message_upper-info_date 2019/03/27(Wed) 00:12:51
+				%p.message_text トイレなう
+		%form.new_message#new_message{ :action => "/groups/94/messages", :method => "post" }
+			%input{ :name => "utf-8", :type => "hidden", :value => ""}
+			%input{ :type => "hidden", :name => "authenticity_token", :value => "" }
+			.input-box
+				%input.input_box-text#message_content{ :placeholder => "type a message", :type => "text", :name => "message[content]"}
+				%label.input-box_image
+					%i.fa.fa-image
+					%input.input-box_image_file#message_image{ :type => "file", :name => "message[image]"}
+			%input.submit-btn{ :type => "submit", :name => "commit", :value => "Send" }
