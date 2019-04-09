@@ -1,2 +1,79 @@
 @import "./reset";
 @import "font-awesome";
+
+.chat-side {
+  box-sizing: border-box;
+  display: block;
+  width: 300px;
+  color: white;
+  float: left;
+    .side-header {
+      background-color: #253141;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: bold;
+        .side-header_user-name p {
+
+        }
+        .user-name {
+          box-sizing: border-box;
+          display: block;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-innline-start: 0px;
+          margin-innline-end: 0px;
+        }
+      .side-header_box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: bold;
+        .side-header_user-name p {
+          display: block;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+        }
+        .user-menu li {
+          display: flex;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+          padding-inline-start: 40px;
+          font-weight: bold;
+            .user-menu_edit-user {
+              .a {
+                text-decoration: none;
+                  .fa {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                  }
+              }
+            }
+          .user-menu_new-group li {
+            a {
+              text-decoration: none;
+            }
+            a:-webkit-any-link {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  .group {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0;
+    overflow: scroll;
+  }
+}
+
