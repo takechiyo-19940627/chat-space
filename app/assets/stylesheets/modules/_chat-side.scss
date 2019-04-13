@@ -21,11 +21,8 @@
             margin: 0 3px;
             position: relative;
             bottom: 50px;
-            a {
-              color: $chat-side-text;
-                .fa {
-                  display: inline-block;
-                }
+            .fa {
+              display: inline-block;
             }
           }
           .user-menu__edit-user {
@@ -37,5 +34,20 @@
           }
       }
     }
-
+    .groups {
+      background-color: #2f3e51;
+      height: calc(100vh - 100px);
+      padding: 20px;
+      .group {
+        padding-bottom: 40px;
+        .group__group-name {
+          font-size: 15px;
+          font-weight: bold;
+        }
+        .group__latest-message {
+          font-size: 11px;
+          margin-top: 5px;
+        }
+      }
+    }
 }

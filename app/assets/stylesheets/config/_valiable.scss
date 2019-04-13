@@ -1,1 +1,9 @@
 $chat-side-text: #ffffff;
+
+.chat-side a {
+  color: $chat-side-text;
+}
+
+a {
+  text-decoration: none;
+}
