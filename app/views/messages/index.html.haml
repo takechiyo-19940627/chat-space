@@ -27,3 +27,14 @@
 				.group
 					%p.group__group-name group-name4
 					%p.group__latest-message test-message4
+	.chat-main
+		.main-header
+			.current-group
+				%h2.current-group__name group-name1
+				%ul.member-list
+					Member：
+					%li.member-list__member take
+			%a{ :href => '/groups/150/edit'}
+				.main-header__edit-btn Edit
+		.messages
+		.form
