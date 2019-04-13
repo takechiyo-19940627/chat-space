@@ -1,0 +1,41 @@
+@import "./config/valiable";
+.chat-side {
+  width: 300px;
+  color: $chat-side-text;
+  float: left;
+    .side-header {
+      height: 100px;
+      width: 100%;
+      font-size: 16px;
+      padding: 0 20px;
+      background-color: #253141;
+      font-weight: bold;
+       .side-header__user-name {
+         font-size: 16px;
+         display: block;
+         padding: 30px 0;
+       }
+      .user-menu {
+          li {
+            display: list-item;
+            margin: 0 3px;
+            position: relative;
+            bottom: 50px;
+            a {
+              color: $chat-side-text;
+                .fa {
+                  display: inline-block;
+                }
+            }
+          }
+          .user-menu__edit-user {
+            float: left;
+            left: 220px;
+          }
+          .user-menu__new-group {
+            float: right;
+          }
+      }
+    }
+
+}

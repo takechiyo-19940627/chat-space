@@ -1,2 +1,8 @@
 @import "./reset";
+@import "modules/chat-side";
+@import "font-awesome";
 //font-awesomeの読みこみ
+
+* {
+  box-sizing: border-box;
+}
