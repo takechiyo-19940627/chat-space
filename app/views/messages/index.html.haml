@@ -5,7 +5,7 @@
 			%p.side-header__user-name user_name
 			%ul.user-menu
 				%li.user-menu__edit-user
-					%a{ :href => '/groups/new' }
+					%a{ :href => '/groups/new'}
 						%i.fa.fa-edit
 				%li.user-menu__new-group
 					%a{ :href => 'users/user.id/edit'}
@@ -53,3 +53,12 @@
 					%p.upper-info__data 2019/03/23(Sat) 18:32:25
 				%p.message__text message3
 		.form
+			%form.new-message{"accept-charset" => "utf-8", :action => "/group/94/messages", :enctype => "multipart/form-data", :method => "post"}
+				%input{:name => "utf8", :type => "hidden", :value => ""}
+				%input{:name => "authenticity_token", :type => "hidden", :value => ""}
+				.input-box
+					%input.input-box__text#message_content{:placeholder => "type a message", :type => "text", :name => "message[content]"}
+					%label.image-label{:for => "message-image"}
+						%i.fa.fa-image
+						%input.image-label__input#message-image{:type => "file", :name => "message[image]"}
+				%input.new-message__submit-btn{:type => "submit", :name => "commit", :value => "Send", :data-disable-with => "Send"}

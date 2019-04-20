@@ -1,8 +1,56 @@
 @import "./reset";
 @import "modules/chat-side";
+@import "modules/chat-main";
+@import 'font-awesome-sprockets';
 @import "font-awesome";
-//font-awesomeの読みこみ
 
 * {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
+
+.fa {
+  display: inline-block;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-stretch: normal;
+  font-size: inherit;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+//input, textarea, select {
+//  font-family: inherit;
+//  font-size: inherit;
+//  font-weight: inherit;
+//}
+//
+//input {
+//  -webkit-appearance: textfield;
+//  background-color: white;
+//  -webkit-rtl-ordering: logical;
+//  cursor: text;
+//  border-width: 2px;
+//  border-style: inset;
+//  border-color: initial;
+//  border-image: initial;
+//}
+//
+//input, textarea, select, button {
+//  text-rendering: auto;
+//  color: initial;
+//  letter-spacing: normal;
+//  word-spacing: normal;
+//  text-transform: none;
+//  text-indent: 0;
+//  text-shadow: none;
+//  display: inline-block;
+//  text-align: start;
+//  font: 400 13.3333px Arial;
+//}
