@@ -5,25 +5,25 @@
 			%p.chat-side__side-header__user-name user_name
 			%ul.chat-side__side-header__user-menu
 				%li.chat-side__side-header__user-menu__edit-user
-					%a{ :href => '/groups/new'}
+					= link_to 'users/edit', :method => :get do
 						%i.fa.fa-edit
 				%li.chat-side__side-header__user-menu__new-group
-					%a{ :href => 'users/user.id/edit'}
+					= link_to 'groups/new', :method => :get do
 						%i.fa.fa-cog
 		.groups
-			%a{ :href => '/groups/94/messages'}
+			= link_to '/groups/94/messages', :method => :get do
 				.groups__group
 					%p.groups__group__group-name group-name1
 					%p.groups__group__latest-message test-message1
-			%a{ :href => '/groups/150/messages'}
+			= link_to '/groups/150/messages', :method => :get do
 				.groups__group
 					%p.groups__group__group-name group-name2
 					%p.groups__group__latest-message test-message2
-			%a{ :href => '/groups/195/messages'}
+			= link_to '/groups/195/messages', :method => :get do
 				.groups__group
 					%p.groups__group__group-name group-name3
 					%p.groups__group__latest-message test-message3
-			%a{ :href => '/groups/196/messages'}
+			= link_to '/groups/196/messages', :method => :get do
 				.groups__group
 					%p.groups__group__group-name group-name4
 					%p.groups__group__latest-message test-message4
@@ -34,7 +34,7 @@
 				%ul.chat-main__main-header__current-group__member-list
 					Member：
 					%li.chat-main__main-header__current-group__member-list__member take
-			%a{ :href => '/groups/150/edit'}
+			= link_to '/groups/150/edit', :method => :get do
 				.chat-main__main-header__edit-btn Edit
 		.messages
 			.messages__message
