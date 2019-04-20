@@ -1,64 +1,64 @@
 .flash-box
 .wrapper
 	.chat-side
-		.side-header
-			%p.side-header__user-name user_name
-			%ul.user-menu
-				%li.user-menu__edit-user
+		.chat-side__side-header
+			%p.chat-side__side-header__user-name user_name
+			%ul.chat-side__side-header__user-menu
+				%li.chat-side__side-header__user-menu__edit-user
 					%a{ :href => '/groups/new'}
 						%i.fa.fa-edit
-				%li.user-menu__new-group
+				%li.chat-side__side-header__user-menu__new-group
 					%a{ :href => 'users/user.id/edit'}
 						%i.fa.fa-cog
 		.groups
 			%a{ :href => '/groups/94/messages'}
-				.group
-					%p.group__group-name group-name1
-					%p.group__latest-message test-message1
+				.groups__group
+					%p.groups__group__group-name group-name1
+					%p.groups__group__latest-message test-message1
 			%a{ :href => '/groups/150/messages'}
-				.group
-					%p.group__group-name group-name2
-					%p.group__latest-message test-message2
+				.groups__group
+					%p.groups__group__group-name group-name2
+					%p.groups__group__latest-message test-message2
 			%a{ :href => '/groups/195/messages'}
-				.group
-					%p.group__group-name group-name3
-					%p.group__latest-message test-message3
+				.groups__group
+					%p.groups__group__group-name group-name3
+					%p.groups__group__latest-message test-message3
 			%a{ :href => '/groups/196/messages'}
-				.group
-					%p.group__group-name group-name4
-					%p.group__latest-message test-message4
+				.groups__group
+					%p.groups__group__group-name group-name4
+					%p.groups__group__latest-message test-message4
 	.chat-main
-		.main-header
-			.current-group
-				%h2.current-group__name group-name1
-				%ul.member-list
+		.chat-main__main-header
+			.chat-main__main-header__current-group
+				%h2.chat-main__main-header__current-group__name group-name1
+				%ul.chat-main__main-header__current-group__member-list
 					Member：
-					%li.member-list__member take
+					%li.chat-main__main-header__current-group__member-list__member take
 			%a{ :href => '/groups/150/edit'}
-				.main-header__edit-btn Edit
+				.chat-main__main-header__edit-btn Edit
 		.messages
-			.message
-				.upper-info
-					%p.upper-info__user user1
-					%p.upper-info__data 2019/03/23(Sat) 18:32:23
-				%p.message__text message1
-			.message
-				.upper-info
-					%p.upper-info__user user2
-					%p.upper-info__data 2019/03/23(Sat) 18:32:24
-				%p.message__text message2
-			.message
-				.upper-info
-					%p.upper-info__user user3
-					%p.upper-info__data 2019/03/23(Sat) 18:32:25
-				%p.message__text message3
+			.messages__message
+				.messages__message__upper-info
+					%p.messages__message__upper-info__user user1
+					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:23
+				%p.messages__message__text message1
+			.messages__message
+				.messages__message__upper-info
+					%p.messages__message__upper-info__user user2
+					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:24
+				%p.messages__message__message__text message2
+			.messages__message
+				.messages__message__upper-info
+					%p.messages__message__upper-info__user user3
+					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:25
+				%p.messages__message__text message3
 		.form
-			%form.new-message{"accept-charset" => "utf-8", :action => "/group/94/messages", :enctype => "multipart/form-data", :method => "post"}
+			%form.form__new-message{"accept-charset" => "utf-8", :action => "/group/94/messages", :enctype => "multipart/form-data", :method => "post"}
 				%input{:name => "utf8", :type => "hidden", :value => ""}
 				%input{:name => "authenticity_token", :type => "hidden", :value => ""}
-				.input-box
-					%input.input-box__text#message_content{:placeholder => "type a message", :type => "text", :name => "message[content]"}
-					%label.image-label{:for => "message-image"}
+				.form__new-message__input-box
+					%input.form__new-message__input-box__text#message_content{:placeholder => "type a message", :type => "text", :name => "message[content]"}
+					%label.form__new-message__input-box__image-label{:for => "message-image"}
 						%i.fa.fa-image
-						%input.image-label__input#message-image{:type => "file", :name => "message[image]"}
-				%input.new-message__submit-btn{:type => "submit", :name => "commit", :value => "Send", :data-disable-with => "Send"}
+						%input.form__new-message__input-box__image-label__input#message-image{:type => "file", :name => "message[image]"}
+				%input.form__new-message__submit-btn{:type => "submit", :name => "commit", :value => "Send", :data-disable-with => "Send"}
