@@ -18,3 +18,5 @@
 .byebug_history
 public/uploads/*
 .idea/workspace.xml
+
+.idea/codeStyles/Project.xml
