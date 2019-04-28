@@ -45,11 +45,7 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.12.2, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.5, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.4, rbenv: 2.3.1) [gem]" level="application" />
-<<<<<<< HEAD
-    <orderEntry type="library" scope="PROVIDED" name="devise (v4.6.1, rbenv: 2.3.1) [gem]" level="application" />
-=======
     <orderEntry type="library" scope="PROVIDED" name="erb2haml (v0.1.5, rbenv: 2.3.1) [gem]" level="application" />
->>>>>>> ab240d3a1e87a4f2c9e4dd3fcae5bfdbe1e76130
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.10.0, rbenv: 2.3.1) [gem]" level="application" />
@@ -83,11 +79,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rake (v12.3.2, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.3, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.0, rbenv: 2.3.1) [gem]" level="application" />
-<<<<<<< HEAD
-    <orderEntry type="library" scope="PROVIDED" name="responders (v2.4.1, rbenv: 2.3.1) [gem]" level="application" />
-=======
     <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.13.1, rbenv: 2.3.1) [gem]" level="application" />
->>>>>>> ab240d3a1e87a4f2c9e4dd3fcae5bfdbe1e76130
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.7.3, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-listen (v4.0.0, rbenv: 2.3.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v5.0.7, rbenv: 2.3.1) [gem]" level="application" />
