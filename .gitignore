@@ -12,7 +12,15 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.idea/
 
 # Ignore Byebug command history file.
 .byebug_history
 public/uploads/*
+.idea/workspace.xml
+
+.idea/codeStyles/Project.xml
+
+*.xml
+
+.idea/workspace.xml
