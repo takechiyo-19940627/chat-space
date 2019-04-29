@@ -1,31 +1,21 @@
 .wrapper
 	.chat-side
 		.chat-side__side-header
-			%p.chat-side__side-header__user-name user_name
+			%p.chat-side__side-header__user-name
+				= current_user.name
 			%ul.chat-side__side-header__user-menu
 				%li.chat-side__side-header__user-menu__edit-user
-					= link_to '#' do
+					= link_to new_group_path do
 						%i.fa.fa-edit
 				%li.chat-side__side-header__user-menu__new-group
-					= link_to '#' do
+					= link_to edit_user_path(current_user) do
 						%i.fa.fa-cog
 		.groups
-			= link_to '#' do
-				.groups__group
-					%p.groups__group__group-name group-name1
-					%p.groups__group__latest-message test-message1
-			= link_to '#' do
-				.groups__group
-					%p.groups__group__group-name group-name2
-					%p.groups__group__latest-message test-message2
-			= link_to '#' do
-				.groups__group
-					%p.groups__group__group-name group-name3
-					%p.groups__group__latest-message test-message3
-			= link_to '#' do
-				.groups__group
-					%p.groups__group__group-name group-name4
-					%p.groups__group__latest-message test-message4
+			.group
+				.group__name
+					グループ名
+				.group__message
+					新着メッセージ
 	.chat-main
 		.chat-main__main-header
 			.chat-main__main-header__current-group
