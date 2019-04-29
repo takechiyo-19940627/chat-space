@@ -1,0 +1,12 @@
+@import "./config/valiable";
+.notification {
+  width: 100%;
+  color: white;
+  text-align: center;
+  .alert {
+    background-color: red;
+  }
+  .notice {
+    background-color: $btn-color;
+  }
+}

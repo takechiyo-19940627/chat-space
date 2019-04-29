@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :logged_in?, only: [:edit, :update]
+  before_action user_signed_in?, only: [:edit, :update]
   before_action :set_user
+
+
 
   def edit
   end
