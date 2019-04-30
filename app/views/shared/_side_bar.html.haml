@@ -1,0 +1,19 @@
+.chat-side
+	.chat-side__side-header
+		%h3.chat-side__side-header__user-name
+			= current_user.name
+		%ul.chat-side__side-header__user-menu
+			%li.chat-side__side-header__user-menu__edit-user
+				= link_to new_group_path do
+					%i.fa.fa-edit
+			%li.chat-side__side-header__user-menu__new-group
+				= link_to edit_user_path(current_user) do
+					%i.fa.fa-cog
+	.groups
+		.groups__group
+			- current_user.groups.each do |group|
+				= link_to group_messages_path(group) do
+					.groups__group__group-name
+						= group.name
+					.groups__group__latest-message
+						メッセージはありません
