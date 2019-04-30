@@ -1,4 +1,4 @@
 class GroupUser < ApplicationRecord
-  has_many :users
-  has_many :messages
+  belongs_to :user
+  belongs_to :group
 end
