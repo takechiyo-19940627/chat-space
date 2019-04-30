@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index :users, :name, unique: true|
+|name|string|null: false, index :true, :name, unique: true|
 |email|text|null: false, add_index :users, :email, unique: true|
 |password|text|null: false|
 
@@ -26,7 +26,7 @@
 - has_many :messages
 - has_many :group_members
 
-## group_membersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|

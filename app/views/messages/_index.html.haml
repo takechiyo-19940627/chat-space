@@ -1,0 +1,37 @@
+.wrapper
+	=render 'shared/side_bar'
+	.chat-main
+		.chat-main__main-header
+			.chat-main__main-header__current-group
+				%h2.chat-main__main-header__current-group__name group-name1
+				%ul.chat-main__main-header__current-group__member-list
+					Member：
+					%li.chat-main__main-header__current-group__member-list__member take
+			= link_to '#' do
+				.chat-main__main-header__edit-btn Edit
+		.messages
+			.messages__message
+				.messages__message__upper-info
+					%p.messages__message__upper-info__user user1
+					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:23
+				%p.messages__message__text message1
+			.messages__message
+				.messages__message__upper-info
+					%p.messages__message__upper-info__user user2
+					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:24
+				%p.messages__message__message__text message2
+			.messages__message
+				.messages__message__upper-info
+					%p.messages__message__upper-info__user user3
+					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:25
+				%p.messages__message__text message3
+		.form
+			%form.form__new-message{ "accept-charset": 'utf-8', action: "/group/94/messages", enctype: "multipart/form-data", method: :post }
+				%input{ name: "utf8", type: "hidden", value: ""}
+				%input{ name: "authenticity_token", type: "hidden", value: ""}
+				.form__new-message__input-box
+					%input.form__new-message__input-box__text#message_content{ placeholder: "type a message", type: "text", name: "message[content]"}
+					%label.form__new-message__input-box__image-label{ for: "message-image"}
+						%i.fa.fa-image
+						%input.form__new-message__input-box__image-label__input#message-image{ type:"file", name: "message[image]"}
+				%input.form__new-message__submit-btn{ type: "submit", name: "commit", value: "Send", "data-disable-with": "Send" }
