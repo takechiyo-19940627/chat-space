@@ -1,2 +1,2 @@
 .wrapper
-	= render 'shared/side_bar'
+	= render partial: 'messages/index', locals: { group: @group, user: @user}
