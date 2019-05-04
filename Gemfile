@@ -18,7 +18,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'erb2haml'
-gem 'font-awesome-sass', '~> 5.0.7'
+gem 'font-awesome-rails'
 
 group :development, :test do
 
@@ -38,3 +38,5 @@ gem 'devise'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'pry-doc'
+gem 'carrierwave'
+gem 'mini_magick'

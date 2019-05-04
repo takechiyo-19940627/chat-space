@@ -1,0 +1,25 @@
+.wrapper
+	=render 'shared/side_bar'
+	.chat-main
+		.chat-main__main-header
+			.chat-main__main-header__current-group
+				%h2.chat-main__main-header__current-group__name
+					= @group.name
+				%ul.chat-main__main-header__current-group__member-list
+					Member：
+					%li.chat-main__main-header__current-group__member-list__member
+						- @group.group_users.each do |group_user|
+							= group_user.user.name
+			= link_to '#' do
+				.chat-main__main-header__edit-btn Edit
+		.messages
+			= render @messages
+		.form
+			= form_for [@group, @message] do |f|
+				.form__new-message
+					.form__new-message__input-box
+						= f.text_field :content, class: 'form__new-message__input-box__text', placeholder: "type a message"
+						= f.label :image, class: "form__new-message__input-box__image-label" do
+							= fa_icon "image", class: "form__new-message__input-box__image-icon fa"
+							= f.file_field :image, class: "form__new-message__input-box__image-hidden"
+					= f.submit 'Send', class: "form__new-message__submit-btn"
