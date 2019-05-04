@@ -3,18 +3,17 @@
 	.chat-main
 		.chat-main__main-header
 			.chat-main__main-header__current-group
-				%h2.chat-main__main-header__current-group__name group-name1
+				%h2.chat-main__main-header__current-group__name
+					= @group.name
 				%ul.chat-main__main-header__current-group__member-list
 					Member：
-					%li.chat-main__main-header__current-group__member-list__member take
+					%li.chat-main__main-header__current-group__member-list__member
+						- @group.group_users.each do |group_user|
+							= group_user.user.name
 			= link_to '#' do
 				.chat-main__main-header__edit-btn Edit
 		.messages
-			.messages__message
-				.messages__message__upper-info
-					%p.messages__message__upper-info__user user1
-					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:23
-				%p.messages__message__text message1
+			= render @messages
 		.form
 			= form_for [@group, @message] do |f|
 				.form__new-message
