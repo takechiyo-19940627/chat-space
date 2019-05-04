@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     @group = Group.find(params[:id])
+    @messages
   end
 
   def new
