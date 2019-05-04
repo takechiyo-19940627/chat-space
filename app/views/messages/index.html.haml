@@ -15,23 +15,12 @@
 					%p.messages__message__upper-info__user user1
 					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:23
 				%p.messages__message__text message1
-			.messages__message
-				.messages__message__upper-info
-					%p.messages__message__upper-info__user user2
-					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:24
-				%p.messages__message__message__text message2
-			.messages__message
-				.messages__message__upper-info
-					%p.messages__message__upper-info__user user3
-					%p.messages__message__upper-info__data 2019/03/23(Sat) 18:32:25
-				%p.messages__message__text message3
 		.form
-			%form.form__new-message{ "accept-charset": 'utf-8', action: "/group/94/messages", enctype: "multipart/form-data", method: :post }
-				%input{ name: "utf8", type: "hidden", value: ""}
-				%input{ name: "authenticity_token", type: "hidden", value: ""}
-				.form__new-message__input-box
-					%input.form__new-message__input-box__text#message_content{ placeholder: "type a message", type: "text", name: "message[content]"}
-					%label.form__new-message__input-box__image-label{ for: "message-image"}
-						%i.fa.fa-image
-						%input.form__new-message__input-box__image-label__input#message-image{ type:"file", name: "message[image]"}
-				%input.form__new-message__submit-btn{ type: "submit", name: "commit", value: "Send", "data-disable-with": "Send" }
+			= form_for [@group, @message] do |f|
+				.form__new-message
+					.form__new-message__input-box
+						= f.text_field :content, class: 'form__new-message__input-box__text', placeholder: "type a message"
+						= f.label :image, class: "form__new-message__input-box__image-label" do
+							= fa_icon "image", class: "form__new-message__input-box__image-icon fa"
+							= f.file_field :image, class: "form__new-message__input-box__image-hidden"
+					= f.submit 'Send', class: "form__new-message__submit-btn"

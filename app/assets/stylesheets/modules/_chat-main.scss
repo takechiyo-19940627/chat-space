@@ -66,9 +66,10 @@
     background-color: #ddd;
       &__new-message {
         display: flex;
-          &__input-box{
-            position: relative;
+          &__input-box {
+            height: 50px;
             width: 100%;
+            position: relative;
               &__text {
                 height: 50px;
                 width: 100%;
@@ -77,14 +78,16 @@
                 border-style: none;
               }
               &__image-label {
-                font-size: 1.3rem;
                 position: absolute;
+                font-size: 1.3rem;
                 top: 10px;
-                right: 20px;
+                right: 10px;
+              }
+              &__image-icon {
                 cursor: pointer;
-                  &__input {
-                    display: none;
-                  }
+              }
+              &__image-hidden {
+                display: none;
               }
           }
           &__submit-btn {
