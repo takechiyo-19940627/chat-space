@@ -1,7 +1,31 @@
 $(function () {
    function buildHTML(message) {
-       var html =
-       return html;
+       var content = message.content ? message.content : "";
+       var img = message.image ? '<img src= "${message.image.url}">' : "";
+       var html = `<div class="messages__message">
+                     <div class="messages__message__upper-info">
+                       <p class="messages__message__upper-info__user">
+                           ${message.user_name}
+                       </p>
+                       <p class="messages__message__upper-info__data">
+                           ${message.date}
+                       </p>
+                     </div>
+                     <p class="messages__message__text">
+                        ${content}
+                     </p>
+                        ${img}
+                   </div>`
+                   console.log(img);
+       return html
+   }
+
+   function scrollBottom() {
+       var target = $('.messages__message').last();
+       var position = target.offset().top + $('.messages').scrollTop();
+       $('.messages').animate({
+           scrollTop: position
+       }, 300, 'swing');
    }
 
    $('#new_message').on("submit", function (e) {
@@ -16,14 +40,19 @@ $(function () {
            processData: false,
            contentType: false
        })
-           .done(function (data) {
-            var html = buildHTML(data);
-            $('.messages').append(html);
-            $('.form__new-message__input-box__text').val("")
-               $().animate({scrollTop: 0}, 500, 'swing')
-           })
-           .fail(function () {
-               alert("メッセージが投稿されませんでした。");
-           });
+       .done(function (data) {
+        var html = buildHTML(data);
+        console.log(html);
+        $('.messages').append(html);
+        $('.form__new-message__input-box__text').val('');
+        $('.message__image').val('');
+        scrollBottom();
+       })
+       .fail(function () {
+           alert("メッセージが投稿されませんでした。");
+       })
+       .always(function (data) {
+           $('.form__new-message__submit-btn').prop('disabled', false);
+       })
    })
 });

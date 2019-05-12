@@ -15,11 +15,11 @@
 		.messages
 			= render @messages
 		.form
-			= form_for([@group, @message], data: { remote: true }, id: :new_message)  do |f|
+			= form_for([@group, @message], data: { remote: true }, id: 'new_message')  do |f|
 				.form__new-message
 					.form__new-message__input-box
 						= f.text_field :content, class: 'form__new-message__input-box__text', placeholder: "type a message"
 						= f.label :image, class: "form__new-message__input-box__image-label" do
 							= fa_icon "image", class: "form__new-message__input-box__image-icon fa"
 							= f.file_field :image, class: "form__new-message__input-box__image-hidden"
-					= f.submit 'Send', class: "form__new-message__submit-btn"
+					= f.submit 'Send',class: "form__new-message__submit-btn"
