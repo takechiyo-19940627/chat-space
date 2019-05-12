@@ -1,7 +1,7 @@
 $(function () {
    function buildHTML(message) {
-       var content = message.content ? message.content : "";
-       var img = message.image ? '<img src= "${message.image.url}">' : "";
+       var content = message.content ? `${message.content}` : "";
+       var img = message.image ? `<img src= ${ message.image }>` : "";
        var html = `<div class="messages__message">
                      <div class="messages__message__upper-info">
                        <p class="messages__message__upper-info__user">
@@ -16,7 +16,6 @@ $(function () {
                      </p>
                         ${img}
                    </div>`
-                   console.log(img);
        return html
    }
 
@@ -31,6 +30,7 @@ $(function () {
    $('#new_message').on("submit", function (e) {
        e.preventDefault();
        var formData = new FormData(this);
+       console.log(formData);
        var url = $(this).attr('action');
        $.ajax({
            type: "POST",
@@ -42,7 +42,6 @@ $(function () {
        })
        .done(function (data) {
         var html = buildHTML(data);
-        console.log(html);
         $('.messages').append(html);
         $('.form__new-message__input-box__text').val('');
         $('.message__image').val('');
