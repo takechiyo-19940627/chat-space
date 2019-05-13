@@ -30,7 +30,6 @@ $(function () {
    $('#new_message').on("submit", function (e) {
        e.preventDefault();
        var formData = new FormData(this);
-       console.log(formData);
        var url = $(this).attr('action');
        $.ajax({
            type: "POST",
@@ -43,14 +42,14 @@ $(function () {
        .done(function (data) {
         var html = buildHTML(data);
         $('.messages').append(html);
-        $('.form__new-message__input-box__text').val('');
-        $('.message__image').val('');
+        $('.form__new-message__input-box__text').val("");
+        $('.message__image').val("");
         scrollBottom();
        })
        .fail(function () {
            alert("メッセージが投稿されませんでした。");
        })
-       .always(function (data) {
+       .always(function () {
            $('.form__new-message__submit-btn').prop('disabled', false);
        })
    })
