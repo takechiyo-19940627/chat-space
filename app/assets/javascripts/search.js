@@ -10,6 +10,15 @@ $(function () {
                         '</div>' +
                    '</div>'
         search_list.append(html)
+
+        $('.user-search-add').on('click', function () {
+            var user_id = $('this').data("user-id");
+            var user_name = $('this').data("user-name");
+            appendUserToGroup(user)
+        });
+        $('.user-search-remove').on('click', function () {
+            $(this).remove();
+        })
     }
 
     var group_user_list = $('#chat-group-users');
@@ -59,15 +68,5 @@ $(function () {
             alert('ユーザの検索に失敗しました')
         })
     });
-
-    $('.user-search-add').on('click', function () {
-        var user_id = $('this').data("user-id");
-        var user_name = $('this').data("user-name");
-
-    });
-
-    $('chat-group-user__btn').on('click', function () {
-        $(this).parent().remove();
-    })
 
 });
