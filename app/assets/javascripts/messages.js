@@ -42,9 +42,8 @@ $(function () {
        .done(function (data) {
         var html = buildHTML(data);
         $('.messages').append(html);
-        $('.form__new-message__input-box__text').val("");
-        $('.message__image').val("");
         scrollBottom();
+        $('#new_message')[0].reset();
        })
        .fail(function () {
            alert("メッセージが投稿されませんでした。");
