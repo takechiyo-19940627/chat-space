@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    @group = Group.find(params[:id])
+    @groups = current_user.groups.order("created_at DESC")
     @messages
   end
 
