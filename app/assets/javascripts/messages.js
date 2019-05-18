@@ -15,7 +15,7 @@ $(function () {
                         ${content}
                      </p>
                         ${img}
-                   </div>`
+                   </div>` 
        return html
    }
 
