@@ -28,39 +28,42 @@ $(function () {
    }
 
    var buildMessageHTML = function (message) {
+       console.log(message);
        if (message.content && message.image.url) {
            var html =
-               `<div class="messages__message" message_id="${ message.id }" >
+               `<div class="messages__message" data-message-id="${ message.id }" >
                    <div class="upper-message">
                       <div class="upper-message__user-name">
-                        message.user_name
+                        ${ message.user_name }
                       </div>
                       <div class="upper-message__date">
-                        message.created_at
+                        ${ message.created_at }
                       </div>
                    </div>
                    <div class="lower-message">
                      <p class="lower-message__content">
-                        message.content
+                        ${ message.content }
                      </p>
                      <img src=" ${ message.image.url } " class="lower-message__image" >
                </div>`
 
        } else if (message.content) {
            var html =
-               `<div class="messages__message" message_id="${ message.id }">
+               `<div class="messages__message" data-message-id="${ message.id }">
                   <div class="upper-message">
                      <div class="upper-message__user-name">
-                        message.user_name
+                        ${ message.user_name }
                      </div>
                      <div class="upper-message__date">
-                        message.created_at
+                        ${ message.created_at }
                      </div>
                   </div>
                   <div class="lower-message">
                      <img src=" ${ message.image.url } " class="lower-message__image" >
                   </div>
                </div>`
+       } else {
+           var message_id = 0
        }
        return html
    };
@@ -100,7 +103,7 @@ $(function () {
    });
 
    var reloadMessages = function () {
-       var last_message_id = $('.messages__message').last().attr("message_id");
+       var last_message_id = $('.messages__message').last().data("message-id");
        $.ajax({
            url: '/api/messages',
            type: 'GET',
@@ -108,12 +111,11 @@ $(function () {
            data: {id: last_message_id}
        })
        .done(function (messages) {
-           var insertHTML = '';
            messages.forEach(function (message) {
-               buildMessageHTML(message);
-               $('.messages__message').animate({scrollTop: $('.messages__message')[0].scrollHeight}, 500, 'swing');
+               var insertHTML = buildMessageHTML(message);
+               $('.messages').append(insertHTML);
+               $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500, 'swing');
            });
-           console.log('success');
        })
        .fail(function () {
            console.log('error');
