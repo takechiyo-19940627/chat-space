@@ -2,22 +2,23 @@ $(function () {
    function buildHTML(message) {
        var content = message.content ? `${message.content}` : "";
        var img = message.image ? `<img src= ${ message.image }>` : "";
-       var html = `<div class="messages__message">
-                     <div class="messages__message__upper-info">
-                       <p class="messages__message__upper-info__user">
-                           ${message.user_name}
-                       </p>
-                       <p class="messages__message__upper-info__data">
-                           ${message.date}
-                       </p>
-                     </div>
-                     <p class="messages__message__text">
-                        ${content}
-                     </p>
-                     <p class="message__image">
-                        ${img}
-                     </p>   
-                   </div>`
+       var html =
+           `<div class="messages__message">
+              <div class="messages__message__upper-info">
+                <p class="messages__message__upper-info__user">
+                   ${message.user_name}
+                </p>
+                <p class="messages__message__upper-info__data">
+                   ${message.date}
+                </p>
+              </div>
+              <p class="messages__message__text">
+                ${content}
+              </p>
+              <p class="message__image">
+                ${img}
+              </p>   
+            </div>`
        if (img) {
            return html
        } else {
@@ -28,36 +29,38 @@ $(function () {
 
    var buildMessageHTML = function (message) {
        if (message.content && message.image.url) {
-           var html = '<div class="message" data-id=' + message.id +'>' +
-               '<div class="upper-message">' +
-                  '<div class="upper-message__user-name">' +
-                    message.user_name +
-                  '</div>' +
-                  '<div class="upper-message__date">' +
-                    message.created_at +
-                  '</div>' +
-               '</div>' +
-               '<div class="lower-message">' +
-                 '<p class="lower-message__content">' +
-                    message.content +
-                 '</p>' +
-                 '<img src="' + message.image.url +'" class="lower-message__image" >' +
-               '</div>'
+           var html =
+               `<div class="messages__message" message_id="${ message.id }" >
+                   <div class="upper-message">
+                      <div class="upper-message__user-name">
+                        message.user_name
+                      </div>
+                      <div class="upper-message__date">
+                        message.created_at
+                      </div>
+                   </div>
+                   <div class="lower-message">
+                     <p class="lower-message__content">
+                        message.content
+                     </p>
+                     <img src=" ${ message.image.url } " class="lower-message__image" >
+               </div>`
 
        } else if (message.content) {
-           var html = '<div class="message" data-id=' + message.id +'>' +
-                 '<div class="upper-message">' +
-                    '<div class="upper-message__user-name">' +
-                        message.user_name +
-                    '</div>' +
-                    '<div class="upper-message__date">' +
-                        message.created_at +
-                    '</div>' +
-                 '</div>' +
-                 '<div class="lower-message">' +
-                    '<img src="' + message.image.url +'"class="lower-message__image" >' +
-                 '</div>' +
-               '</div>'
+           var html =
+               `<div class="messages__message" message_id="${ message.id }">
+                  <div class="upper-message">
+                     <div class="upper-message__user-name">
+                        message.user_name
+                     </div>
+                     <div class="upper-message__date">
+                        message.created_at
+                     </div>
+                  </div>
+                  <div class="lower-message">
+                     <img src=" ${ message.image.url } " class="lower-message__image" >
+                  </div>
+               </div>`
        }
        return html
    };
@@ -97,8 +100,7 @@ $(function () {
    });
 
    var reloadMessages = function () {
-       var message_id = $("#message_id");
-       last_message_id =　message_id.data('message.id');
+       var last_message_id = $('.messages__message').last().attr("message_id");
        $.ajax({
            url: '/api/messages',
            type: 'GET',
