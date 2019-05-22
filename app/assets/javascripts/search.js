@@ -13,11 +13,13 @@ $(function () {
     }
 
     function appendErrMsgToHTML(msg) {
-        var html = '<div class="chat-group-user clearfix">' +
-            '<p>' +
-            `${ msg }` +
-            '</p>' +
-            '</div>'
+        var html =
+            `<div class="chat-group-user clearfix">
+               <p>
+                 ${ msg }
+               </p>
+            </div>`
+
         search_list.append(html);
     }
 
