@@ -34,7 +34,6 @@ $(function () {
                             削除
                         </a>
                    </div>`
-        console.log(html);
         group_user_list.append(html);
     }
 
