@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.where('name LIKE(?)', "%#{params[:group_users]}%").having('id != ?', current_user)
+    @users = User.where('name LIKE(?)', "%#{params[:group_users]}%").where.not('id = ?', current_user)
     respond_to do |format|
       format.html
       format.json
