@@ -7,9 +7,9 @@
           = @group.name
         %ul.chat-main__main-header__current-group__member-list
           Member：
-        %li.chat-main__main-header__current-group__member-list__member
-          - @group.group_users.each do |group_user|
-            = group_user.user.name
+          %li.chat-main__main-header__current-group__member-list__member
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       = link_to '#' do
         .chat-main__main-header__edit-btn Edit
     .messages
