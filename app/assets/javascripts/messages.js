@@ -3,7 +3,7 @@ $(function () {
        var content = message.content ? `${message.content}` : "";
        var img = message.image ? `<img src= ${ message.image }>` : "";
        var html =
-           `<div class="messages__message">
+           `<div class="messages__message" data-message-id="${ message.id }">
               <div class="messages__message__upper-info">
                 <p class="messages__message__upper-info__user">
                    ${message.user_name}
@@ -19,35 +19,8 @@ $(function () {
                 ${img}
               </p>   
             </div>`
-       if (img) {
-           return html
-       } else {
-           return html()
-       }
-
-   }
-
-   var buildMessageHTML = function (message) {
-       var content = message.content ? `${message.content}` : "";
-       var img = message.image ? `<img src= ${ message.image }>` : "";
-       var html =
-           `<div class="messages__message" data-message-id="${ message.id }" >
-               <div class="upper-message">
-                  <div class="upper-message__user-name">
-                    ${ content.user_name }
-                  </div>
-                  <div class="upper-message__date">
-                    ${ content.created_at }
-                  </div>
-               </div>
-               <div class="lower-message">
-                 <p class="lower-message__content">
-                    ${ content }
-                 </p>
-                    $ { img }
-           </div>`
        return html
-   };
+   }
 
    function scrollBottom() {
        var target = $('.messages__message').last();
@@ -93,13 +66,12 @@ $(function () {
        })
        .done(function (messages) {
            messages.forEach(function (message) {
-               var insertHTML = buildMessageHTML(message);
+               var insertHTML = buildHTML(message);
                $('.messages').append(insertHTML);
                scrollBottom();
            });
        })
        .fail(function () {
-           console.log('error');
            alert('メッセージの更新に失敗しました')
        })
    };
