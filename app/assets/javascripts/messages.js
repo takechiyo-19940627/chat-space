@@ -2,20 +2,23 @@ $(function () {
    function buildHTML(message) {
        var content = message.content ? `${message.content}` : "";
        var img = message.image ? `<img src= ${ message.image }>` : "";
-       var html = `<div class="messages__message">
-                     <div class="messages__message__upper-info">
-                       <p class="messages__message__upper-info__user">
-                           ${message.user_name}
-                       </p>
-                       <p class="messages__message__upper-info__data">
-                           ${message.date}
-                       </p>
-                     </div>
-                     <p class="messages__message__text">
-                        ${content}
-                     </p>
-                        ${img}
-                   </div>` 
+       var html =
+           `<div class="messages__message" data-message-id="${ message.id }">
+              <div class="messages__message__upper-info">
+                <p class="messages__message__upper-info__user">
+                   ${message.user_name}
+                </p>
+                <p class="messages__message__upper-info__data">
+                   ${message.created_at}
+                </p>
+              </div>
+              <p class="messages__message__text">
+                ${content}
+              </p>
+              <p class="message__image">
+                ${img}
+              </p>   
+            </div>`
        return html
    }
 
@@ -51,5 +54,26 @@ $(function () {
        .always(function () {
            $('.form__new-message__submit-btn').prop('disabled', false);
        })
-   })
+   });
+
+   var reloadMessages = function () {
+       var last_message_id = $('.messages__message').last().data('message-id');
+       $.ajax({
+           url: '/api/messages',
+           type: 'GET',
+           dataType: 'json',
+           data: {id: last_message_id}
+       })
+       .done(function (messages) {
+           messages.forEach(function (message) {
+               var insertHTML = buildHTML(message);
+               $('.messages').append(insertHTML);
+               scrollBottom();
+           });
+       })
+       .fail(function () {
+           alert('メッセージの更新に失敗しました')
+       })
+   };
+   setInterval(reloadMessages, 5000);
 });
