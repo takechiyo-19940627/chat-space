@@ -8,6 +8,6 @@ class Api::MessagesController < ApplicationController
 
   private
   def last_message_params
-    params.permit(:last_message_id)
+    params.permit(:id)
   end
 end
