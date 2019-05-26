@@ -21,7 +21,11 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 
 group :development, :test do
-
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
   gem 'byebug', platform: :mri
 end
 
