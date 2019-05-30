@@ -29,3 +29,5 @@ public/uploads/*
 .idea/workspace.xml
 
 .idea/workspace.xml
+
+config/secrets.yml
