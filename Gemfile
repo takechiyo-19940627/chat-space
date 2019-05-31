@@ -36,6 +36,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+gem 'carrierwave'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
@@ -46,6 +48,5 @@ gem 'devise'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'pry-doc'
-gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog-aws'
+
