@@ -35,8 +35,8 @@ $(function () {
        var formData = new FormData(this);
        var url = $(this).attr('action');
        $.ajax({
-           type: 'POST',
            url: url,
+           type: 'POST',
            data: formData,
            dataType: 'json',
            processData: false,
@@ -56,25 +56,25 @@ $(function () {
        })
    });
 
-   // function reloadMessages () {
-   //     var last_message_id = $('.messages__message').last().data('message-id');
-   //     console.log(last_message_id);
-   //     $.ajax({
-   //         url: '/api/messages',
-   //         type: 'GET',
-   //         dataType: 'json',
-   //         data: {id: last_message_id}
-   //     })
-   //     .done(function (messages) {
-   //         messages.forEach(function (message) {
-   //             var insertHTML = buildHTML(message);
-   //             $('.messages').append(insertHTML);
-   //             scrollBottom();
-   //         });
-   //     })
-   //     .fail(function () {
-   //         alert('メッセージの更新に失敗しました')
-   //     })
-   // }
-   // setInterval(reloadMessages, 5000);
+   function reloadMessages () {
+       var last_message_id = $('.messages__message').last().data('message-id');
+       console.log(last_message_id);
+       $.ajax({
+           url: '/api/messages',
+           type: 'GET',
+           dataType: 'json',
+           data: {id: last_message_id}
+       })
+       .done(function (messages) {
+           messages.forEach(function (message) {
+               var insertHTML = buildHTML(message);
+               $('.messages').append(insertHTML);
+               scrollBottom();
+           });
+       })
+       .fail(function () {
+           alert('メッセージの更新に失敗しました')
+       })
+   }
+   setInterval(reloadMessages, 500);
 });
