@@ -49,3 +49,40 @@
 ### Association
 - belongs_to :user
 - belongs_to :group
+
+
+### usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|image|string||
+|mail|text|uniquness: true|
+
+### goodsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|image|string||
+|price|integer||
+|brand|text||
+|size||||
+
+### categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+
+
+### sub_categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+
+
+### goods_categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|image|string||
+|price|integer||
+
