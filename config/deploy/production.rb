@@ -9,7 +9,7 @@ server '52.192.177.81', user: 'ec2-user', roles: %w{app db web}
 
 current_path = "/path/to/project/current"
 
-before_exec do |server|
+before do |server|
   ENV['BUNDLE_GEMFILE'] = "#{current_path}/Gemfile"
 end
 
