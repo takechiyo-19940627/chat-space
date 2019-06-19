@@ -53,6 +53,7 @@ $(function () {
        })
        .always(function () {
            $('.form__new-message__submit-btn').prop('disabled', false);
+           $('#new_message')[0].reset();
        })
    });
 
